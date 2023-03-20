@@ -1,3 +1,5 @@
+<h2>Alunos</h2>
+
 <pre>
 <?php
 $aluno1 = array(
@@ -19,13 +21,9 @@ $aluno4 = array(
     "nome" => "lavinia sandi",
     "nota1" => "8",
     "nota2" => "9"
-);    
+);
 
-$dados = [$aluno1, $aluno2, $aluno3, $aluno4];
-
-//print_r($dados);
-
-echo json_encode($dados);
+$dados = [$aluno1, $aluno2, $aluno3,$aluno4];
 
 ?>
 </pre>

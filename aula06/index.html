@@ -9,46 +9,38 @@
 <body>
     <h1>Lista de Alunos</h1>
     <hr>
-    <table border="1" width="100%">
+
+    <table border=1 width="100%">
         <tr>
             <th>Nome</th>
             <th>Nota 1</th>
             <th>Nota 2</th>
-            <th>Média</th>
+            <th>Media</th>
         </tr>
     </table>
 
     <script>
 
         var tabela = document.querySelector("table");
+
         function criarLinha(nome,n1,n2){
         var linha = tabela.insertRow();
         var celNome = linha.insertCell();
         var celNota1 = linha.insertCell();
-        var celNota2 = linha.insertCell();
-        var celMédia = linha.insertCell();
+        var celNota2= linha.insertCell();
+        var celMedia = linha.insertCell();
 
-        celNome.innerText =  nome;
+        celNome.innerText = nome;
         celNota1.innerText = n1;
         celNota2.innerText = n2;
-        celMédia.innerText = (n1+n2) / 2;
-}
+        celMedia.innerText = (n1 + n2) / 2;
+        }
 
-//fazer uma requisição para o beckend
+        //fazer uma requisição para backend
+        fetch("")
 
-fetch("http://localhost/3infoa/dalva/aula06/alunos.php")
-.then(Response => Response.JSON())
-.then(JSON => {
-    for(var aluno if JSON){
-        criarLinha("Ivan", 10, 10);
-    }
-});
-
-criarLinha("Ivan", 10, 10);
-
-
-
+        criarLinha("Ivan",10,10);
+        criarLinha("Murilo",11,11);
     </script>
-
 </body>
 </html>
