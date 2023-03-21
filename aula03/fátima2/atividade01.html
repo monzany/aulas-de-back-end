@@ -1,18 +1,61 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
-<head>
-	<meta charset="utf-8">
-	<title>Exercício 3_1</title>
-	<script src="atividadetiafa.js"></script>
-            
-</head>
-<body>
-	Teste os Exercícios:
-	
-	<form>
-		<input type="button" value="Exercício 1" onclick="ex1();"/>
-	</form>
-	
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Notas dos alunos</title>
+  </head>
+  <body>
+    <h1>Notas dos alunos</h1>
+    <button onclick="adicionarAluno()">Adicionar aluno</button>
+    <div id="notas-alunos"></div>
+    <script>
+      let alunos = [];
+
+       function adicionarAluno() { //cria uma função chamada adicionarAluno
+        let nome = prompt("Insira o nome do aluno (ou clique em 'Cancelar' para finalizar):");
+        if (nome == null) {
+          imprimirNotas();
+          return;
+        }
+        
+        let disciplinas = [];
+        while (true) {
+          let disciplina = prompt("Insira o nome da disciplina (ou clique em 'Cancelar' para adicionar notas para outra disciplina):");
+          if (disciplina == null) {
+            break;
+          }
+          
+          let nota = parseFloat(prompt("Insira a nota do aluno para esta disciplina:"));
+          disciplinas.push([disciplina, nota]);
+        }
+        
+        alunos.push({nome: nome, disciplinas: disciplinas}); //utilizar o push para adicionar elementos
+        adicionarNotas();
+      }
+
+      function adicionarNotas() {
+        let notasAlunosDiv = document.getElementById("notas-alunos");
+        notasAlunosDiv.innerHTML = ""; //utilizo innerHTML para mostrar a nota dos alunos
+        
+        for (let i = 0; i < alunos.length; i++) {
+          let aluno = alunos[i];
+          let notasAlunoDiv = document.createElement("div");
+          notasAlunoDiv.innerHTML = `<h2>${aluno.nome}:</h2>`;
+          
+          for (let j = 0; j < aluno.disciplinas.length; j++) {
+            let disciplina = aluno.disciplinas[j][0];
+            let nota = aluno.disciplinas[j][1];
+            notasAlunoDiv.innerHTML += `<p>${disciplina}: ${nota}</p>`;
+          }
+          
+          notasAlunosDiv.appendChild(notasAlunoDiv);
+        }
+      }
+
+      function imprimirNotas() {
+        adicionarNotas();
+        alert("Notas dos alunos adicionadas com sucesso!"); //prompt de alerta!
+      }
+    </script>
+  </body>
 </html>
-  
