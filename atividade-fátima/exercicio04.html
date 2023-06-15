@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validação de Nota</title>
+  <script>
+    function validarNota() {
+      var nota = parseFloat(document.getElementById("nota").value);
+
+      if (nota >= 0 && nota <= 10) {
+        alert("Nota válida: " + nota);
+      } else {
+        alert("Nota inválida. Por favor, digite uma nota entre zero e dez.");
+        document.getElementById("nota").value = "";
+        document.getElementById("nota").focus();
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Validação de Nota</h1>
+  <p>Digite uma nota entre zero e dez:</p>
+  <input type="text" id="nota" placeholder="Nota">
+  <br>
+  <button onclick="validarNota()">Validar</button>
+</body>
+</html>

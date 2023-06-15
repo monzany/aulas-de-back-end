@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contagem de Números Pares e Ímpares</title>
+  <script>
+    function contarParesImpares() {
+      var numeros = [];
+      var qtdPares = 0;
+      var qtdImpares = 0;
+
+      for (var i = 1; i <= 10; i++) {
+        var numero = parseInt(prompt("Digite o número " + i));
+
+        if (isNaN(numero)) {
+          alert("Digite um número válido.");
+          i--;
+        } else {
+          numeros.push(numero);
+
+          if (numero % 2 === 0) {
+            qtdPares++;
+          } else {
+            qtdImpares++;
+          }
+        }
+      }
+
+      alert("Quantidade de números pares: " + qtdPares + "\nQuantidade de números ímpares: " + qtdImpares);
+    }
+  </script>
+</head>
+<body>
+  <h1>Contagem de Números Pares e Ímpares</h1>
+  <button onclick="contarParesImpares()">Contar</button>
+</body>
+</html>

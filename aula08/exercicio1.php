@@ -1,10 +1,29 @@
-<?php
-if(isset($_GET['n1']) && isset($_GET['n2'])){
-$resultado = $_GET['n1'] + $_GET['n2'];
-echo "O resultado da soma é $resultado";
-}else{
-    //echo "Você precisa informar os valores para somar";
-    header("Location: form1.html");
-}
+<h2>Ordenação - Ordem Alfabética</h2>
 
-?>
+<?php
+    $nomes = [
+        "Murilo", 
+        "Poliana", 
+        "Dalva", 
+        "Lavinia",
+        "Camila",
+        "Kaua"
+    ];
+
+    //Algoritmo Select Sort - 
+    //            Quick Sort, Merge Sort, Bouble Sort
+    for($c=0; $c<=4; $c++){
+        for($i = $c + 1;$i<=5; $i++){
+            if($nomes[$c] > $nomes[$i]){
+                $celBranco = $nomes[$i];
+                $nomes[$i] = $nomes[$c];
+                $nomes[$c] = $celBranco;
+            }
+        }
+    }
+    
+    var_dump($nomes);
+
+    //Camila,Dalva, Kaua, Lavinia, Murilo, Poliana
+
+ ?>
