@@ -1,5 +1,5 @@
 <?php require_once "consultar_por_id.php" ?>
-<?php require_once "../template/cabecalho.php";  ?>
+
 
     <h1>Cadastro de Estudante</h1>
     <hr>
@@ -28,4 +28,4 @@
 
     </form>
 
-    <?php require_once "../template/rodape.php";  ?>
+    

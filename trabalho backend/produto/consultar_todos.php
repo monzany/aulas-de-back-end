@@ -3,7 +3,7 @@
 require_once "../conexao.php";
 
 //String com o comando SQL para ser executado no DB
-$sql = "SELECT * FROM `estudante` ";
+$sql = "SELECT * FROM `estudantes` ";
 
 //Prepara o SQL para ser executado no banco de dados
 $comando = $conexao->prepare($sql);
